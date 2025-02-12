@@ -28,8 +28,6 @@ export default function Feedback() {
           <span className="font-bold">{data.length}</span>
         </h1>
         <Link
-          setData={setData}
-          data={data}
           className="bg-amber-300 max-h-10"
           to="feedbackForm"
           element={<FeedBackForm />}
@@ -49,7 +47,10 @@ export default function Feedback() {
       </div>
       <Outlet />
       {data.map((data) => (
-        <div className="border border-gray-300 shadow-md p-4 flex flex-col ml-10 mr-[80px] rounded-4xl">
+        <div
+          key={data.name}
+          className="border border-gray-300 shadow-md p-4 flex flex-col ml-10 mr-[80px] rounded-4xl"
+        >
           <span>Name: {data.name}</span>
           <p>{data.review}</p>
           <span>{"⭐".repeat(data.rating)}</span>
