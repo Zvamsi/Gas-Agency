@@ -6,7 +6,7 @@ export default function Feedback() {
   const [data, setData] = useState([]);
 
   useEffect(function () {
-    fetch("../data/feedBack.json")
+    fetch("/data/feedBack.json") // ✅ Correct path
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);

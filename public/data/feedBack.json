@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Ravi Mehta",
+    "rating": 5,
+    "review": "Great service! The staff was super friendly, and they even cleaned my windshield for free. Fuel quality seems top-notch too!"
+  },
+  {
+    "name": "Priya Sharma",
+    "rating": 4,
+    "review": "Good fuel prices compared to nearby stations. However, the air pump was out of service, which was a bit inconvenient."
+  },
+  {
+    "name": "Amit Verma",
+    "rating": 5,
+    "review": "One of the cleanest gas stations I’ve visited. The restroom was spotless, and they had a small shop with snacks and drinks!"
+  },
+  {
+    "name": "Sneha Iyer",
+    "rating": 3,
+    "review": "Fuel quality is fine, but the waiting time was too long during peak hours. Need more staff to manage the rush."
+  },
+  {
+    "name": "Karan Singh",
+    "rating": 5,
+    "review": "Love this place! They offer a free car vacuuming service with a fuel purchase. A hidden gem for car owners!"
+  },
+  {
+    "name": "Pooja Reddy",
+    "rating": 4,
+    "review": "Decent gas station, but they should add a UPI payment option for faster transactions."
+  },
+  {
+    "name": "Vikram Joshi",
+    "rating": 3,
+    "review": "Fuel quality is okay, but the card machine was not working, which caused a delay. Needs better maintenance."
+  },
+  {
+    "name": "Sanjay Gupta",
+    "rating": 5,
+    "review": "I always come here for my refueling needs. The diesel quality is excellent, and my car gives better mileage with it."
+  },
+  {
+    "name": "Ananya Dutta",
+    "rating": 4,
+    "review": "Nice place, but the air pressure machine was giving incorrect readings. Please fix it!"
+  },
+  {
+    "name": "Rahul Nair",
+    "rating": 5,
+    "review": "Best gas station in the area! Polite staff, fast service, and reasonable fuel prices. Highly recommended!"
+  }
+]
