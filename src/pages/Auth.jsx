@@ -18,8 +18,9 @@ export default function Auth({
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (name && number) setIsAuth(!isAuth);
-    if (!name || !number) throw new Error("Please enter correct details");
+    setIsAuth(true);
+    //   if (name && number) setIsAuth(!isAuth);
+    //   if (!name || !number) throw new Error("Please enter correct details");
   }
 
   useEffect(
@@ -60,7 +61,6 @@ export default function Auth({
         <div>
           <Button>Login</Button>
         </div>
-        {console.log(name, number)}
       </form>
     </div>
   );

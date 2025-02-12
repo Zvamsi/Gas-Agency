@@ -1,6 +1,6 @@
 import Header from "./pages/Header";
 import Home from "./pages/Home";
-import Footer from "./pages/Footer";
+import Footer from "./pages/Sidebar";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Contact from "./pages/Contact";
 import Main from "./pages/Main";

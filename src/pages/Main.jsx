@@ -8,6 +8,7 @@ import Service01 from "./Service01";
 import Service03 from "./Service03";
 import Service02 from "./Service02";
 import Feedback from "./Feedback";
+import FeedBackForm from "./FeedBackForm";
 
 export default function Main({ setIsAuth, isAuth }) {
   return (
@@ -25,7 +26,9 @@ export default function Main({ setIsAuth, isAuth }) {
           <Route path="service02" element={<Service02 />} />
           <Route path="service03" element={<Service03 />} />
         </Route>
-        <Route path="feedback" element={<Feedback />} />
+        <Route path="feedback" element={<Feedback />}>
+          <Route path="feedbackForm" element={<FeedBackForm />} />
+        </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
