@@ -1,10 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { useData } from "../Context";
 
 export default function FeedBackForm() {
-  const [feedBackName, setFeedBackName] = useState("");
-  const [review, setReview] = useState("");
-  const [rating, setRating] = useState(0);
+  const {
+    feedBackName,
+    setFeedBackName,
+    review,
+    setReview,
+    rating,
+    setRating,
+    data,
+    setData,
+  } = useData();
 
   const navigate = useNavigate();
 
@@ -12,6 +20,9 @@ export default function FeedBackForm() {
   function handleSubmit(e) {
     e.preventDefault();
     navigate(-1);
+    setFeedBackName("");
+    setRating(0);
+    setReview("");
     // {
     //     "name": "Rahul Nair",
     //     "rating": 5,
@@ -24,13 +35,17 @@ export default function FeedBackForm() {
     };
     console.log(newFeedBack);
 
-    // setData = [...data, newFeedBack];
+    setData([...data, newFeedBack]);
     if (rating > 4)
       alert(`Thank you soo much for the feedback ${feedBackName}`);
     else
       alert(
         `we are trying to become better every single day and Hoping to assist you further`
       );
+  }
+
+  function handleCancel() {
+    navigate(-1);
   }
   return (
     <div className="place-items-center">
@@ -69,6 +84,7 @@ export default function FeedBackForm() {
           />
         </div>
         <button>Submit</button>
+        <button onClick={handleCancel}>Cancel</button>
       </form>
     </div>
   );

@@ -10,16 +10,13 @@ import Service02 from "./Service02";
 import Feedback from "./Feedback";
 import FeedBackForm from "./FeedBackForm";
 
-export default function Main({ setIsAuth, isAuth }) {
+export default function Main() {
   return (
     <div className="col-span-3 bg-gray-200 p-4">
       <Routes>
         <Route idex element={<Auth />} />
         <Route path="/home" element={<Home />} />
-        <Route
-          path="/"
-          element={<Auth setIsAuth={setIsAuth} isAuth={isAuth} />}
-        />
+        <Route path="/" element={<Auth />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="services" element={<ServiceList />}>
           <Route path="service01" element={<Service01 />} />

@@ -1,26 +1,26 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Button from "./Button";
 import { useNavigate } from "react-router";
+// import { Context } from "../App";
+import { useData } from "../Context";
 
-export default function Auth({
-  isAuth,
-  setIsAuth,
-  name,
-  number,
-  setName,
-  setNumber,
-}) {
+const inputStyle =
+  "w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600";
+
+export default function Auth() {
   //   const [name, setName] = useState("");
   //   const [number, setNumber] = useState("");
   //   const [isAuth, setIsAuth] = useState(false);
+  const { isAuth, setIsAuth, name, number, setName, setNumber } = useData();
+  console.log(isAuth);
 
   const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    setIsAuth(true);
-    //   if (name && number) setIsAuth(!isAuth);
-    //   if (!name || !number) throw new Error("Please enter correct details");
+
+    if (name && number) setIsAuth(!isAuth);
+    if (!name || !number) throw new Error("Please enter correct details");
   }
 
   useEffect(
@@ -34,13 +34,13 @@ export default function Auth({
     <div className="h-screen grid place-items-center bg-gray-500 space-y-2">
       <form
         onSubmit={handleSubmit}
-        className="bg-gray-400 rounded-lg p-4 space-y-2"
+        className="bg-gray-400 rounded-lg p-4 space-y-2 w-[500px]"
       >
         <div>
           <p>Enter Name:</p>
           <input
-            className="border-none"
-            type="name"
+            className={inputStyle}
+            type="text"
             id="name"
             default="user"
             placeholder="Enter full name"
@@ -50,7 +50,8 @@ export default function Auth({
         <div>
           <p>Enter your mobile number</p>
           <input
-            type="mobileNumber"
+            className={inputStyle}
+            type="number"
             id="mobileNumber"
             default="9935664883"
             maxLength={10}

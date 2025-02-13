@@ -1,16 +1,20 @@
+import { useData } from "../Context";
 import Button from "./Button";
 import { Link } from "react-router";
+import StyledLink from "./StyledLink";
 
-export default function Header({ name }) {
+export default function Header() {
+  const { name } = useData();
   return (
     <div className="bg-gray-500 place-content-between p-5 flex">
       <div className="flex">
         <h1 className="text-3xl font-bold text-blue-300 underline decoration-double">
           Hello {name}😎
         </h1>
-        <Link className="text-blue-700 mt-2 ml-4" to="/home">
+        <StyledLink to="/home">Home</StyledLink>
+        {/* <Link className="text-blue-700 mt-2 ml-4" to="/home">
           Home
-        </Link>
+        </Link> */}
       </div>
       <div className="flex space-x-5">
         <div className="flex h-10 w-34 overflow-hidden border space-x-1">
@@ -44,7 +48,7 @@ export default function Header({ name }) {
             />
           </a>
         </div>
-        <Link to="/contact">Contact Us</Link>
+        <StyledLink to="/contact">Contact Us</StyledLink>
       </div>
     </div>
   );

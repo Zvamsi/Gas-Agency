@@ -1,9 +1,12 @@
-import { Outlet, useLocation } from "react-router";
+import { Outlet, useLocation, useNavigate } from "react-router";
 import Services from "./Services";
 import { useEffect, useState } from "react";
+import { useData } from "../Context";
 
 export default function ServiceList() {
-  const [isService, setIsService] = useState(false);
+  // const [isService, setIsService] = useState(false);
+  const { isService, setIsService } = useData();
+  const navigate = useNavigate();
 
   return (
     <>

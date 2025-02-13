@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router";
 import FeedBackForm from "./FeedBackForm";
+import { useData } from "../Context";
 
 export default function Feedback() {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
+  const { data, setData } = useData();
 
   useEffect(function () {
     fetch("/data/feedBack.json") // ✅ Correct path
       .then((res) => res.json())
-      .then((data) => setData(data));
+      .then((info) => setData(info));
   }, []);
   console.log(data);
 

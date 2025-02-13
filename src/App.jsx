@@ -5,39 +5,30 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Contact from "./pages/Contact";
 import Main from "./pages/Main";
 import PageNotFound from "./PageNotFound";
-import { useState } from "react";
+import { createContext, useContext, useState } from "react";
 import Auth from "./pages/Auth";
+import { useData } from "./Context";
+
+//1.Create a new context
+// export const Context = createContext();
 
 function App() {
-  const [show, setShow] = useState(false);
-  const [isAuth, setIsAuth] = useState(false);
-  const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
-
+  const { isAuth } = useData();
   return (
+    //2.Provide value to child component
+
     <div>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Auth
-                isAuth={isAuth}
-                setIsAuth={setIsAuth}
-                name={name}
-                number={number}
-                setName={setName}
-                setNumber={setNumber}
-              />
-            }
-          ></Route>
+          <Route path="/" element={<Auth />}></Route>
+          {!isAuth && <Route path="*" element={<Auth />} />}
         </Routes>
         {isAuth && (
           <>
-            <Header name={name} />
+            <Header />
             <div className="grid grid-cols-4 gap-4 w-full">
-              <Footer show={show} setShow={setShow} />
-              <Main isAuth={isAuth} setIsAuth={setIsAuth} />
+              <Footer />
+              <Main />
             </div>
           </>
         )}

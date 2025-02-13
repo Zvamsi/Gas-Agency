@@ -5,7 +5,7 @@ import Button from "./Button";
 export default function Home({ show }) {
   return (
     <div>
-      <div className="bg-gray-700 place-content-between">
+      {/* <div className="bg-gray-700 place-content-between">
         <img
           className="w-[20rem] h-[10rem] object-cover"
           src="public/cylinder-01.png"
@@ -17,7 +17,7 @@ export default function Home({ show }) {
           src="public/cylinder-02.png"
           alt=""
         />
-      </div>
+      </div> */}
 
       <p>
         A. Domestic LPG Services (For Households) 14.2 kg cylinder (Standard
