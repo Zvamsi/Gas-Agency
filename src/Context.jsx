@@ -11,7 +11,7 @@ function ContextProvider({ children }) {
   const [data, setData] = useState([]);
   const [feedBackName, setFeedBackName] = useState("");
   const [review, setReview] = useState("");
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(null);
 
   return (
     <Context.Provider

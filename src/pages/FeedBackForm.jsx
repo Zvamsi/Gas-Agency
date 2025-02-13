@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { useData } from "../Context";
+import Button from "./Button";
 
 export default function FeedBackForm() {
   const {
@@ -48,12 +49,13 @@ export default function FeedBackForm() {
     navigate(-1);
   }
   return (
-    <div className="place-items-center">
-      feedback form
-      <form onSubmit={handleSubmit}>
+    <div className="place-items-center font-semibold text-xl">
+      <span className="underline text-red-300">feedback form</span>
+      <form onSubmit={handleSubmit} className="space-y-5">
         <div>
-          Enter Name:
+          <span className="mr-5">Enter Name:</span>
           <input
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
             id="name"
             type="text"
             default={name}
@@ -63,8 +65,9 @@ export default function FeedBackForm() {
           />
         </div>
         <div>
-          Enter the feedback
+          <span className="mr-5">Enter the feedback</span>
           <input
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
             id="review"
             type="text"
             value={review}
@@ -73,8 +76,9 @@ export default function FeedBackForm() {
           />
         </div>
         <div>
-          what the rating would be out of 5{" "}
+          <span className="mr-5">what the rating would be out of 5 </span>
           <input
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
             id="rating"
             type="number"
             max="5"
@@ -83,8 +87,11 @@ export default function FeedBackForm() {
             onChange={(e) => setRating(e.target.value)}
           />
         </div>
-        <button>Submit</button>
-        <button onClick={handleCancel}>Cancel</button>
+
+        <div className="space-x-3 mt-4">
+          <Button>Submit</Button>
+          <Button onClick={handleCancel}>Cancel</Button>
+        </div>
       </form>
     </div>
   );

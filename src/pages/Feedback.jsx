@@ -12,7 +12,7 @@ export default function Feedback() {
       .then((res) => res.json())
       .then((info) => setData(info));
   }, []);
-  console.log(data);
+  // console.log(data);
 
   //   fetch("../data/feedBack.json")
   //     .then((res) => res.json())
@@ -30,7 +30,7 @@ export default function Feedback() {
           <span className="font-bold">{data.length}</span>
         </h1>
         <Link
-          className="bg-amber-300 max-h-10"
+          className="h-fit py-2 mt-5 px-4 hover:shadow-lg bg-amber-300 rounded-3xl"
           to="feedbackForm"
           element={<FeedBackForm />}
         >
@@ -39,7 +39,7 @@ export default function Feedback() {
 
         <div className="mr-3 mt-5">
           <p>
-            {data?.filter((review) => review.rating === 5).length}-⭐⭐⭐⭐⭐
+            {data.filter((review) => review.rating === 5).length}-⭐⭐⭐⭐⭐
           </p>
           <p>{data.filter((data) => data.rating === 4).length}-⭐⭐⭐⭐</p>
           <p>{data.filter((data) => data.rating === 3).length}-⭐⭐⭐</p>
